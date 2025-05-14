@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Transition Timing Function Demo</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #2b2b2b;
+      color: #fff;
+      padding: 2rem;
+    }
+
+    h1 {
+      color: #4ecdc4;
+      margin-bottom: 2rem;
+    }
+
+    .demo-group {
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+    }
+
+    .row {
+      background: #3a3a3a;
+      padding: 1rem;
+      border-radius: 8px;
+    }
+
+    .label {
+      font-weight: bold;
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      color: #9dddf0;
+    }
+
+    .description {
+      font-size: 0.95rem;
+      line-height: 1.5;
+      color: #d0d0d0;
+      margin-bottom: 1rem;
+    }
+
+    .box {
+      width: 100%;
+      height: 40px;
+      position: relative;
+      overflow: hidden;
+      background: #1c1c1c;
+      border-radius: 4px;
+    }
+
+    .dot {
+      position: absolute;
+      top: 0;
+      width: 40px;
+      height: 40px;
+      background: #f9c74f;
+      border-radius: 50%;
+    }
+
+    @keyframes move {
+      0% { left: 0; }
+      50% { left: calc(100% - 40px); }
+      100% { left: 0; }
+    }
+
+    .linear .dot       { animation: move 2s linear infinite; }
+    .ease .dot         { animation: move 2s ease infinite; }
+    .steps .dot        { animation: move 2s steps(10) infinite; }
+    .ease-in .dot      { animation: move 2s ease-in infinite; }
+    .ease-out .dot     { animation: move 2s ease-out infinite; }
+    .ease-in-out .dot  { animation: move 2s ease-in-out infinite; }
+    .bezier .dot       { animation: move 2s cubic-bezier(0.2, 0.75, 0.7, 0.25) infinite; }
+  </style>
+</head>
+<body>
+
+  <h1>CSS <code>transition-timing-function</code> Demo</h1>
+
+  <div class="demo-group">
+
+    <div class="row linear">
+      <div class="label">linear</div>
+      <div class="description">
+        <strong>Description:</strong> Constant speed from beginning to end.<br/>
+        <strong>Use when:</strong> For predictable, mechanical transitions (e.g., progress bars).<br/>
+        <strong>Common in:</strong> Sliders, timers.
+      </div>
+      <div class="box"><div class="dot"></div></div>
+    </div>
+
+    <div class="row ease">
+      <div class="label">ease (default)</div>
+      <div class="description">
+        <strong>Description:</strong> Starts slow, accelerates, then slows down.<br/>
+        <strong>Use when:</strong> You want a natural motion feel.<br/>
+        <strong>Common in:</strong> Buttons, image fades.
+      </div>
+      <div class="box"><div class="dot"></div></div>
+    </div>
+
+    <div class="row ease-in">
+      <div class="label">ease-in</div>
+      <div class="description">
+        <strong>Description:</strong> Starts slow, ends fast.<br/>
+        <strong>Use when:</strong> For entering motions or tooltip reveals.<br/>
+        <strong>Common in:</strong> Intro animations.
+      </div>
+      <div class="box"><div class="dot"></div></div>
+    </div>
+
+    <div class="row ease-out">
+      <div class="label">ease-out</div>
+      <div class="description">
+        <strong>Description:</strong> Starts fast, ends slow.<br/>
+        <strong>Use when:</strong> For exit motions or deceleration.<br/>
+        <strong>Common in:</strong> Closing modals, dropping objects.
+      </div>
+      <div class="box"><div class="dot"></div></div>
+    </div>
+
+    <div class="row ease-in-out">
+      <div class="label">ease-in-out</div>
+      <div class="description">
+        <strong>Description:</strong> Slow start and end, fast middle.<br/>
+        <strong>Use when:</strong> You want a balanced smooth motion.<br/>
+        <strong>Common in:</strong> Page transitions, scroll effects.
+      </div>
+      <div class="box"><div class="dot"></div></div>
+    </div>
+
+    <div class="row steps">
+      <div class="label">steps(10)</div>
+      <div class="description">
+        <strong>Description:</strong> Breaks motion into 10 discrete steps.<br/>
+        <strong>Use when:</strong> For retro, frame-by-frame, or sprite effects.<br/>
+        <strong>Common values:</strong> steps(2), steps(4, end), steps(10).
+      </div>
+      <div class="box"><div class="dot"></div></div>
+    </div>
+
+    <div class="row bezier">
+      <div class="label">cubic-bezier(0.2, 0.75, 0.7, 0.25)</div>
+      <div class="description">
+        <strong>Description:</strong> Custom curve with full control over motion.<br/>
+        <strong>Use when:</strong> You need bounce, elastic, or advanced easing.<br/>
+        <strong>Try your own:</strong> <a href="https://cubic-bezier.com" target="_blank" style="color:#f9c74f">cubic-bezier.com</a>
+      </div>
+      <div class="box"><div class="dot"></div></div>
+    </div>
+
+  </div>
+
+</body>
+</html>
