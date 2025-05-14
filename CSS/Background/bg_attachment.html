@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Background Attachment</title>
+    <style>
+      body {
+        background: #121212;
+        color: #eee;
+        font-family: sans-serif;
+        line-height: 1.5;
+      }
+
+      h2 {
+        text-align: center;
+        margin-top: 48px;
+        font-family: monospace;
+        color: #f9c74f;
+      }
+
+      div {
+        height: 200px;
+        width: 50%;
+        max-width: 600px;
+        margin: 32px auto;
+        overflow-x: hidden;
+        overflow-y: scroll;
+      }
+
+      .with-image {
+        background-image: url("https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80");
+        background-position: top left;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      .content {
+        height: 400px;
+        width: 100%;
+        font-size: 2rem;
+        font-weight: bold;
+        text-shadow: 1px 1px 2px black;
+      }
+
+      .extra-space {
+        margin-bottom: 50px;
+      }
+
+      .note {
+        text-align: center;
+        font-size: 0.9rem;
+        color: #aaa;
+      }
+    </style>
+  </head>
+  <body>
+    <h2><code>scroll (default)</code></h2>
+    <div style="background-attachment: scroll" class="with-image">
+      <div class="content">
+        scroll scroll scroll scroll scroll scroll scroll scroll scroll scroll
+      </div>
+    </div>
+    <div class="note">
+      Background scrolls with the page (default behavior)<br />
+      scroll: The background is fixed with regard to the element itself and does
+      not scroll with its contents. (It is effectively attached to the element's
+      border.)
+    </div>
+
+    <h2><code>fixed</code></h2>
+    <div style="background-attachment: fixed" class="with-image">
+      <div class="content">
+        fixed fixed fixed fixed fixed fixed fixed fixed fixed fixed
+      </div>
+    </div>
+    <div class="note">
+      Background is fixed to the viewport
+      <br />
+      fixed: The background is fixed with regard to the viewport. (...) Even if
+      an element has a scrolling mechanism (...), a ‘fixed’ background doesn't
+      move with the element.
+    </div>
+
+    <h2><code>local</code></h2>
+    <div style="background-attachment: local" class="with-image">
+      <div class="content">
+        local local local local local local local local local local
+      </div>
+    </div>
+    <div class="note">
+      Background scrolls with the element itself<br />
+      local: The background is fixed with regard to the element's contents: if
+      the element has a scrolling mechanism, the background scrolls with the
+      element's contents, and the background painting area and background
+      positioning area are relative to the scrollable area of the element rather
+      than to the border framing them. (...)
+    </div>
+
+    <br class="extra-space" />
+  </body>
+</html>
