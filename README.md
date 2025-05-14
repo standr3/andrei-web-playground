@@ -20,18 +20,12 @@ Each section contains real, runnable demos with minimal explanation and code sni
 
 ```plaintext
 andrei-web-playground/
-├── index.html               # Landing page with links to each topic
-├── css/
-│   └── styles.css           # General styling
-├── topics/
-│   ├── html-basics.html     # Semantic HTML elements, structure
-│   ├── css-layouts.html     # Flexbox, Grid, positioning
-│   ├── responsiveness.html  # Media queries, mobile-first design
-│   ├── transitions.html     # transition-timing-function, animations
-│   ├── snippets.html        # Reusable code patterns (WIP)
-│   └── react-extras.html    # React concepts (later)
-├── assets/
-│   └── icons/, images/, etc.
+├── CSS/
+│   ├── Animations/
+│   │   └── transition_timing.html
+│   └── Background/
+│       └── bg_attachment.html
+├── LICENSE
 └── README.md
 ```
 ## 🛠️ Technologies
@@ -40,16 +34,6 @@ andrei-web-playground/
 - CSS3  
 - Vanilla JavaScript *(planned)*  
 - Maybe: Tailwind, React *(later in roadmap)*
-
----
-
-## 🚧 To Do
-
-- [x] Initial layout + demo pages  
-- [ ] Add navigation or index with links to topics  
-- [ ] Code snippet copy buttons  
-- [ ] Make everything responsive and mobile-friendly  
-- [ ] Add GitHub Pages deployment  
 
 ---
 
