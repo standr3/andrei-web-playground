@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Tooltips</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 2rem;
+      background: #fff8f8;
+      font-family: sans-serif;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 900;
+      margin-bottom: 1rem;
+    }
+
+    .wrapper {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-top: 3rem;
+    }
+
+    .icon {
+      position: relative;
+      background: #fff;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: grid;
+      place-items: center;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .icon:hover {
+      transform: translateY(-6px);
+    }
+
+    .icon i {
+      font-size: 1.5rem;
+      color: #333;
+      transition: color 0.3s ease;
+    }
+
+    .tooltip {
+      position: absolute;
+      bottom: 110%;
+      left: 50%;
+      transform: translateX(-50%) scale(0.95);
+      background: #f33;
+      color: #fff;
+      font-size: 0.85rem;
+      padding: 6px 14px;
+      border-radius: 24px;
+      opacity: 0;
+      pointer-events: none;
+      transition: 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      white-space: nowrap;
+    }
+
+    .icon:hover .tooltip {
+      opacity: 1;
+      transform: translateX(-50%) scale(1);
+    }
+
+    /* Platform colors */
+    .instagram:hover i { color: #E1306C; }
+    .instagram .tooltip { background: #E1306C; }
+
+    .facebook:hover i { color: #3b5998; }
+    .facebook .tooltip { background: #3b5998; }
+
+    .github:hover i { color: #333; }
+    .github .tooltip { background: #333; }
+
+    .youtube:hover i { color: #FF0000; }
+    .youtube .tooltip { background: #FF0000; }
+
+    .twitter:hover i { color: #1DA1F2; }
+    .twitter .tooltip { background: #1DA1F2; }
+  </style>
+</head>
+<body>
+
+  <h1>Tooltips Buttons</h1>
+  
+
+  <div class="wrapper">
+
+    <div class="icon facebook">
+      <span class="tooltip">Facebook</span>
+      <i class="fab fa-facebook-f"></i>
+    </div>
+
+    <div class="icon instagram">
+      <span class="tooltip">Instagram</span>
+      <i class="fab fa-instagram  "></i>
+    </div>
+
+    <div class="icon github">
+      <span class="tooltip">GitHub</span>
+      <i class="fab fa-github"></i>
+    </div>
+
+    <div class="icon youtube">
+      <span class="tooltip">YouTube</span>
+      <i class="fab fa-youtube"></i>
+    </div>
+
+    <div class="icon twitter">
+      <span class="tooltip">Twitter</span>
+      <i class="fab fa-twitter"></i>
+    </div>
+
+  </div>
+
+</body>
+</html>
